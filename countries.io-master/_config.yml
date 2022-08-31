@@ -1,0 +1,46 @@
+###########
+#  site.title
+
+title: 'The World Factbook'
+
+
+##  all world factbook regions
+regions:
+- Europe
+- South Asia
+- Central Asia
+- East & Southeast Asia
+- Middle East
+- Africa
+- North America
+- Central America and Caribbean
+- South America
+- Australia-Oceania
+- Antarctica
+- Oceans
+- World         ## note: official assigned world region is oceans
+
+
+
+########
+# more settings
+
+markdown: kramdown
+
+collections:
+  profiles:
+    output: true
+
+
+sass:
+  sass_dir: css
+  style:    expanded
+
+
+exclude:
+- README.md
+- LICENSE.md
+
+
+safe: true
+lsi: false

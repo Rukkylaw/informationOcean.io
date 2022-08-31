@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<h1>Codes :: {{ site.title }}</h1>
+
+<p>
+{% for profile in site.profiles | sort: 'country_code' %}
+  <code>{{ profile.country_code }}</code>
+{% endfor %}  
+</p>
+
+
+<table>
+
+{% for profile in site.profiles | sort: 'country_code' %}
+<tr>
+  <td><code>{{ profile.country_code }}</code></td>
+  <td>
+      <a href="{{ profile.country_code }}">{{ profile.country_name }}</a> {{ profile.country_affiliation }}
+
+        › {{ profile.region_name }}
+  </td>
+</tr>
+{% endfor %}
+
+</table>

@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<h1>Regions :: The Official World Factbook (Country Profiles)</h1>
+
+<p>
+  <a href="regions">This Site</a> |
+  <a href="cia">Official</a>
+</p>
+
+
+<p>
+{% for region in site.regions %}
+  {{ region }} | 
+{% endfor %}
+</p>
+
+
+{% for region in site.regions %}
+<h2>{{ region }}</h2>
+
+<!-- todo/fix: sort not working ?? -->
+{% for profile in site.profiles | sort: 'country_name' %}
+  {% if region == profile.region_name %}
+    <code>{{ profile.country_code }}</code>
+    <a href="https://www.cia.gov/library/publications/the-world-factbook/geos/{{ profile.country_code }}.html">{{ profile.country_name }}</a> {{ profile.country_affiliation }}
+     ·
+  {% endif %}
+{% endfor %}
+
+{% endfor %}
+

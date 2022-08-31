@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<h1>Last Updates :: {{ site.title }}</h1>
+
+<table>
+
+<!--try sort by last_updated - how? possible?
+     fix/todo: sort by last_updated not working ??
+  -->
+
+{% for profile in site.profiles | sort: 'last_updated' %}
+<tr>
+  <td>{{ profile.last_updated }}</td>
+  <td><code>{{ profile.country_code }}</code></td>
+  <td>
+      <a href="{{ profile.country_code }}">{{ profile.country_name }}</a> {{ profile.country_affiliation }}
+        › {{ profile.region_name }}
+  </td>
+</tr>
+{% endfor %}
+
+</table>
+

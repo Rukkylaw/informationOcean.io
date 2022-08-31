@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }} :: {{ site.title }}</title>
+  <link rel="stylesheet" href="/css/country/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  <script src="/js/jquery.toc.js"></script>
+  <script>
+    $( document ).ready( function() {
+      // console.log( "ready!" );
+      buildToc();
+    });
+  </script>
+</head>
+<body>
+
+{% include github.html %}
+
+
+<div class="headerImgHolder">
+  <img src="/media/flags/{{ page.country_code }}.png">
+  <img src="/media/locators/{{ page.country_code }}.png">
+  <img src="/media/maps/{{ page.country_code }}.png">
+</div>
+
+
+
+<h1>{{ page.country_name }} {{ page.country_affiliation }} :: {{ page.region_name }}</h1>
+
+<!--
+<p>
+Last Updated: {{ page.last_updated }}
+</p>
+-->
+
+<!-- (auto-)add table of contents here; see buildToc in js -->
+<div id="toc"></div>
+
+
+{{ content }}
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+---
+# note: front matter for jekyll processing required
+---
+
+
+$font-size-section:    14px;
+$font-size-subsection: 13px;
+$font-size-text:       12px;
+
+
+
+body {
+  // font-family: Helvetica,Arial,sans-serif;
+  font-family: Geneva, Arial, Helvetica, sans-serif;    // same as print version of cia world factbook
+
+  max-width:     1200px;
+  padding-left:  4px;
+  padding-right: 4px;
+  margin-left:   auto;
+  margin-right:  auto;
+}
+
+
+.headerImgHolder img {
+  background-color: #FFFFFF;
+  border: 1px solid #AAA;
+  margin: 10px 0 10px 5px;
+  padding: 7px;
+  vertical-align: middle;
+  width: 195px;
+  max-height: 200px;
+}
+
+  // sections
+  h2 {
+       // color: navy;
+       margin-top: 16px;
+       border-top: 1px solid black;
+       padding-top: 4px;
+       padding-bottom: 4px;
+       margin-bottom: 2px;
+       font-size: $font-size-section;
+       font-weight: bold;
+       // background-color: #C0C0C0;  // Silver
+       // background-color: #f1e3d0;
+       // background-color: #DEB887;  // BurlyWood
+     }
+
+     // subsections/fields
+     h3 {
+          padding-top: 1px;
+          padding-bottom: 1px;
+          margin: 0;
+         // color: navy;
+         // background-color: #D3D3D3;  // LightGray
+         // background-color:  #F5DEB3;  // Wheat
+         background-color: #CCCCFF;
+         font-size: $font-size-subsection;
+         font-weight: bold;
+         line-height: $font-size-subsection + 5;
+         // letter-spacing: 1px;
+         vertical-align: middle;    // needed? why? why not??
+     }
+
+
+  .category_data,
+    div:not([class])    // todo/fix: add a class to country compare (for now it's an empty div
+  {
+       font-size: $font-size-text;
+        // font-size: 11px;
+        // letter-spacing: 1px;
+       line-height: $font-size-text + 5;
+       vertical-align: middle;
+  }
+
+ .category_data
+  {
+       // note: if subfield group is present
+       //  than name is NOT really used as field key anymore
+       //  but only an inline text
+      .subfield-name,
+      .subfield-group {
+        font-weight: bold;
+      }
+
+      // note: reset strong to em(phasis) -
+      // to see the difference between field name and just an inline emphasized note/marker
+      strong {
+        font-weight: normal;
+        font-style:  italic;
+      }
+
+      // note: reset margin for p(aragraphs) to 0 (treat like div)
+      p {
+        margin: 0;
+      }
+}
+
+ // try adding a border before note block
+ .category_data.note {
+    border-top: 1px solid silver;
+ }
+
+
+
+#toc {
+    width: 300px;  /* 35px */
+    padding: 7px;
+    float: right;
+    /* border: silver solid 1pt; */
+    border: 1px solid #AAA;
+    margin-top: 18px;
+
+    /* background-color: #f9f9f9; */   /* #eeeeee; */
+    // background-color: #F5DEB3;  // Wheat
+    background-color: #F9F9F9;
+
+  // font-size: 80%;
+
+    font-size: $font-size-text;
+    line-height: $font-size-text + 5;
+    // letter-spacing: 1px;
+    // vertical-align: middle;
+
+  #tocheader {
+    text-align: center;
+    #toctitle {
+      font-weight: bold;
+    }
+  }
+
+
+  ul {
+     // list-style-type: square;
+     list-style-type: none;
+     list-style-image: none;
+     padding: 0;
+     margin-left: 0;
+
+    ul {
+      // 2nd level list
+      margin: 0 0 0 2em;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+
+
+  ////////////////
+  // note:
+  //   toggle debug class on body to turn on/off debug styles
+
+/////////////////////////////////////
+// old debug // fix for new format ???
+
+.debug {
+
+  // category (name)
+  div.category { background-color:  lime; margin: 2px; }
+  span.category { display: inline-block; background-color: green; margin: 1px; }
+
+  // category (value)
+  div.category_data  { background-color: silver; margin: 2px; }
+  span.category_data  { display: inline-block; background-color: grey; margin: 1px; }
+}
